@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMC Decor - Professional Painting & Decorating Services in Glasgow & Renfrewshire</title>
+    <meta name="description" content="GMC Decor provides expert painting, decorating, and interior design services throughout Glasgow and Renfrewshire. Professional, reliable, and affordable decorating solutions.">
+    <meta name="keywords" content="painter, decorator, Glasgow, Renfrewshire, painting services, interior decorating, wallpapering, commercial painting">
+    <meta name="author" content="GMC Decor">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="GMC Decor - Professional Decorating Services">
+    <meta property="og:description" content="Expert painting and decorating services in Glasgow and Renfrewshire">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #9fd949;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            background: var(--dark-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 8px;
+            background: var(--primary-green);
+            transform: rotate(-30deg);
+            top: 15px;
+            left: 10px;
+        }
+
+        .logo-circle::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 6px;
+            background: var(--primary-green);
+            transform: rotate(45deg);
+            bottom: 12px;
+            right: 8px;
+        }
+
+        .logo-text {
+            color: var(--white);
+            font-weight: bold;
+            font-size: 0.7rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--dark-bg);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #2d2d2d 100%);
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-highlight {
+            color: var(--primary-green);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: var(--dark-bg);
+        }
+
+        .btn-primary:hover {
+            background: #8bc934;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--dark-bg);
+        }
+
+        /* Services Preview */
+        .services-preview {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-bg);
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-bg);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-bg);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Coverage Area */
+        .coverage {
+            padding: 80px 0;
+            background: var(--dark-bg);
+            color: var(--white);
+        }
+
+        .coverage-content {
+            text-align: center;
+        }
+
+        .coverage h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .coverage-areas {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .area-tag {
+            background: var(--primary-green);
+            color: var(--dark-bg);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-bg);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Pages */
+        .page {
+            display: none;
+            padding: 100px 0 50px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Services Page */
+        .detailed-services {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .detailed-service {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .detailed-service h3 {
+            color: var(--dark-bg);
+            margin-bottom: 1rem;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature::before {
+            content: '✓';
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        /* Quote Form */
+        .quote-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-bg);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .coverage-areas {
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Floating Call Button */
+        .floating-call-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-green);
+            color: var(--dark-bg);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 999;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .floating-call-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        @media (min-width: 769px) {
+            .floating-call-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-circle">
+                    <span class="logo-text">GMC<br>DECOR</span>
+                </div>
+                <span class="company-name">GMC Decor</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('services')">Services</a></li>
+                <li><a href="#" onclick="showPage('quote')">Get Quote</a></li>
+                <li><a href="#" onclick="scrollToSection('contact')">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="container">
+                <h1>Professional <span class="hero-highlight">Decorating</span> Services</h1>
+                <p>Transform your space with GMC Decor's expert painting and decorating services throughout Glasgow and Renfrewshire. Quality craftsmanship, reliable service, competitive prices.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" onclick="showPage('quote')">Get Free Quote</a>
+                    <a href="#" class="btn btn-secondary" onclick="showPage('services')">Our Services</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-preview">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Services</h2>
+                    <p>From residential makeovers to commercial projects, we deliver exceptional results every time</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <h3>Interior Painting</h3>
+                        <p>Professional interior painting services for homes and businesses. High-quality paints, expert application, and attention to detail.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <h3>Exterior Painting</h3>
+                        <p>Weather-resistant exterior painting to protect and beautify your property. Specialising in Scottish weather conditions.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📏</div>
+                        <h3>Wallpapering</h3>
+                        <p>Expert wallpaper installation and removal. Wide range of styles from traditional to contemporary designs.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏢</div>
+                        <h3>Commercial Decorating</h3>
+                        <p>Professional commercial painting and decorating services for offices, retail spaces, and industrial properties.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Why Choose GMC Decor?</h2>
+                        <p>With years of experience serving Glasgow and Renfrewshire, GMC Decor has built a reputation for excellence in painting and decorating services. We combine traditional craftsmanship with modern techniques to deliver outstanding results.</p>
+                        <p>Our team of skilled decorators takes pride in every project, whether it's a single room refresh or a complete property transformation. We use only premium materials and provide comprehensive warranties on all our work.</p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">98%</div>
+                                <div class="stat-label">Customer Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div style="background: var(--primary-green); height: 400px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--dark-bg); font-size: 1.2rem; font-weight: bold;">Professional Decorating Excellence</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="coverage">
+            <div class="container">
+                <div class="coverage-content">
+                    <h2>Areas We Serve</h2>
+                    <p>Providing professional decorating services throughout Glasgow and Renfrewshire</p>
+                    <div class="coverage-areas">
+                        <span class="area-tag">Glasgow City Centre</span>
+                        <span class="area-tag">Paisley</span>
+                        <span class="area-tag">Johnstone</span>
+                        <span class="area-tag">Renfrew</span>
+                        <span class="area-tag">Barrhead</span>
+                        <span class="area-tag">Erskine</span>
+                        <span class="area-tag">Bridge of Weir</span>
+                        <span class="area-tag">Linwood</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Get In Touch</h2>
+                    <p>Ready to transform your space? Contact us today for a free consultation and quote</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <strong>Phone:</strong><br>
+                                <a href="tel:07306277101" style="color: var(--primary-green); text-decoration: none;">07306 277 101</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:gmcdecor@yahoo.com" style="color: var(--primary-green); text-decoration: none;">gmcdecor@yahoo.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <strong>Service Area:</strong><br>
+                                Glasgow & Renfrewshire
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div>
+                                <strong>Hours:</strong><br>
+                                Mon-Fri: 8AM-6PM<br>
+                                Saturday: 9AM-4PM
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quick-contact">
+                        <h3>Quick Contact</h3>
+                        <p>For immediate assistance or emergency decorating needs, call us directly at <strong><a href="tel:07306277101" style="color: var(--primary-green);">07306 277 101</a></strong></p>
+                        <p>We provide free estimates and consultations for all projects.</p>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+                            <a href="tel:07306277101" class="btn btn-primary">📞 Call Now</a>
+                            <a href="#" class="btn btn-secondary" onclick="showPage('quote')">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Services Page -->
+    <div id="services" class="page">
+        <section style="padding: 80px 0; background: var(--light-bg);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Professional Services</h2>
+                    <p>Comprehensive painting and decorating solutions for residential and commercial properties throughout Glasgow and Renfrewshire</p>
+                </div>
+                
+                <div class="detailed-services">
+                    <div class="detailed-service">
+                        <h3>Interior Painting & Decorating</h3>
+                        <p>Transform your indoor spaces with our expert interior painting services. We specialise in creating beautiful, long-lasting finishes that enhance your home or business environment.</p>
+                        <div class="service-features">
+                            <div class="feature">Preparation and priming</div>
+                            <div class="feature">Premium paint application</div>
+                            <div class="feature">Ceiling and wall painting</div>
+                            <div class="feature">Woodwork and trim painting</div>
+                            <div class="feature">Feature walls and accents</div>
+                            <div class="feature">Colour consultation</div>
+                        </div>
+                    </div>
+
+                    <div class="detailed-service">
+                        <h3>Exterior Painting & Weather Protection</h3>
+                        <p>Protect and beautify your property's exterior with our weather-resistant painting solutions, specifically designed for Scotland's challenging climate conditions.</p>
+                        <div class="service-features">
+                            <div class="feature">Render and masonry painting</div>
+                            <div class="feature">Window and door painting</div>
+                            <div class="feature">Gutters and downpipes</div>
+                            <div class="feature">Weather-resistant coatings</div>
+                            <div class="feature">Pressure washing preparation</div>
+                            <div class="feature">Anti-damp treatments</div>
+                        </div>
+                    </div>
+
+                    <div class="detailed-service">
+                        <h3>Wallpapering & Wall Coverings</h3>
+                        <p>Professional wallpaper installation and removal services. From traditional patterns to contemporary designs, we handle all types of wall coverings with precision.</p>
+                        <div class="service-features">
+                            <div class="feature">Wallpaper hanging</div>
+                            <div class="feature">Wallpaper removal</div>
+                            <div class="feature">Wall preparation</div>
+                            <div class="feature">Feature wall creation</div>
+                            <div class="feature">Textured wall coverings</div>
+                            <div class="feature">Pattern matching</div>
+                        </div>
+                    </div>
+
+                    <div class="detailed-service">
+                        <h3>Commercial Decorating</h3>
+                        <p>Reliable commercial decorating services for businesses throughout Glasgow and Renfrewshire. We work efficiently to minimise disruption to your operations.</p>
+                        <div class="service-features">
+                            <div class="feature">Office painting</div>
+                            <div class="feature">Retail space decoration</div>
+                            <div class="feature">Industrial coatings</div>
+                            <div class="feature">Health & safety compliance</div>
+                            <div class="feature">Out-of-hours working</div>
+                            <div class="feature">Maintenance contracts</div>
+                        </div>
+                    </div>
+
+                    <div class="detailed-service">
+                        <h3>Speciality Finishes</h3>
+                        <p>Unique decorative finishes and specialist techniques to create distinctive interiors that reflect your personal style or brand identity.</p>
+                        <div class="service-features">
+                            <div class="feature">Decorative plaster finishes</div>
+                            <div class="feature">Faux painting techniques</div>
+                            <div class="feature">Staining and varnishing</div>
+                            <div class="feature">Spray painting</div>
+                            <div class="feature">Restoration work</div>
+                            <div class="feature">Custom colour matching</div>
+                        </div>
+                    </div>
+
+                    <div class="detailed-service">
+                        <h3>Property Maintenance</h3>
+                        <p>Ongoing maintenance and touch-up services to keep your property looking its best year-round. Perfect for landlords and property managers.</p>
+                        <div class="service-features">
+                            <div class="feature">Regular maintenance visits</div>
+                            <div class="feature">Touch-up painting</div>
+                            <div class="feature">Damage repair</div>
+                            <div class="feature">Seasonal preparations</div>
+                            <div class="feature">Emergency call-outs</div>
+                            <div class="feature">Property inspections</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">Not sure which service you need? We're happy to discuss your requirements and provide expert advice.</p>
+                    <a href="#" class="btn btn-primary" onclick="showPage('quote')">Get Your Free Quote Today</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Quote Page -->
+    <div id="quote" class="page">
+        <section style="padding: 80px 0;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Get Your Free Quote</h2>
+                    <p>Tell us about your project and we'll provide a detailed, no-obligation quote within 24 hours</p>
+                </div>
+
+                <form class="quote-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <!-- Hidden field for Formspree -->
+                    <input type="hidden" name="_subject" value="New Quote Request from GMC Decor Website">
+                    <input type="hidden" name="_next" value="#quote-success">
+                    <input type="hidden" name="_captcha" value="false">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Property Location *</label>
+                        <input type="text" id="location" name="location" placeholder="e.g., Glasgow City Centre, Paisley, etc." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="property-type">Property Type *</label>
+                        <select id="property-type" name="property-type" required>
+                            <option value="">Select property type</option>
+                            <option value="residential-house">Residential House</option>
+                            <option value="residential-flat">Residential Flat/Apartment</option>
+                            <option value="commercial-office">Commercial Office</option>
+                            <option value="commercial-retail">Commercial Retail</option>
+                            <option value="commercial-industrial">Commercial Industrial</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="services">Services Required *</label>
+                        <select id="services" name="services" required>
+                            <option value="">Select primary service</option>
+                            <option value="interior-painting">Interior Painting</option>
+                            <option value="exterior-painting">Exterior Painting</option>
+                            <option value="wallpapering">Wallpapering</option>
+                            <option value="commercial-decorating">Commercial Decorating</option>
+                            <option value="specialty-finishes">Specialty Finishes</option>
+                            <option value="maintenance">Property Maintenance</option>
+                            <option value="multiple-services">Multiple Services</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rooms">Number of Rooms/Areas</label>
+                        <input type="number" id="rooms" name="rooms" min="1" placeholder="e.g., 3">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeline">Preferred Timeline</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Select timeline</option>
+                            <option value="asap">As soon as possible</option>
+                            <option value="1-2-weeks">1-2 weeks</option>
+                            <option value="1-month">Within 1 month</option>
+                            <option value="2-3-months">2-3 months</option>
+                            <option value="planning-stage">Just planning/getting quotes</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Approximate Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select budget range</option>
+                            <option value="under-500">Under £500</option>
+                            <option value="500-1000">£500 - £1,000</option>
+                            <option value="1000-2500">£1,000 - £2,500</option>
+                            <option value="2500-5000">£2,500 - £5,000</option>
+                            <option value="5000-plus">£5,000+</option>
+                            <option value="not-sure">Not sure</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="details">Project Details</label>
+                        <textarea id="details" name="details" placeholder="Please provide any additional details about your project, specific requirements, colours, finishes, etc."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-preference">Preferred Contact Method</label>
+                        <select id="contact-preference" name="contact-preference">
+                            <option value="phone">Phone call</option>
+                            <option value="email">Email</option>
+                            <option value="either">Either phone or email</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Quote Request</button>
+                </form>
+
+                <!-- Success Message (hidden by default) -->
+                <div id="quote-success" style="display: none; text-align: center; padding: 2rem; background: var(--primary-green); color: var(--dark-bg); border-radius: 10px; margin-top: 2rem;">
+                    <h3>Thank You! 🎉</h3>
+                    <p>Your quote request has been submitted successfully. We'll contact you within 2 hours to discuss your project.</p>
+                    <p><strong>Need immediate assistance?</strong><br>
+                    Call us now: <a href="tel:07306277101" style="color: var(--dark-bg); font-weight: bold;">07306 277 101</a></p>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: var(--light-bg); border-radius: 10px;">
+                    <h3 style="color: var(--dark-bg); margin-bottom: 1rem;">What Happens Next?</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: left;">
+                        <div>
+                            <strong>1. Quote Review</strong><br>
+                            <small>We'll review your requirements within 2 hours</small>
+                        </div>
+                        <div>
+                            <strong>2. Site Visit</strong><br>
+                            <small>Free consultation and property assessment</small>
+                        </div>
+                        <div>
+                            <strong>3. Detailed Quote</strong><br>
+                            <small>Comprehensive written quote within 24 hours</small>
+                        </div>
+                        <div>
+                            <strong>4. Project Start</strong><br>
+                            <small>Professional execution of your decorating project</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Floating Call Button (mobile only) -->
+    <a href="tel:07306277101" class="floating-call-btn" title="Call GMC Decor">📞</a>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 GMC Decor. Professional painting and decorating services in Glasgow and Renfrewshire. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">Fully insured • Free quotes • Local family business</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToSection(sectionId) {
+            // Make sure we're on home page first
+            showPage('home');
+            
+            // Wait a moment then scroll to section
+            setTimeout(() => {
+                document.getElementById(sectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }, 100);
+        }
+
+        // Mobile menu functionality
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Smooth scrolling for internal links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle form submission
+            const form = document.querySelector('.quote-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    const requiredFields = form.querySelectorAll('[required]');
+                    let isValid = true;
+                    
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            field.style.borderColor = '#ff6b6b';
+                            isValid = false;
+                        } else {
+                            field.style.borderColor = '#e0e0e0';
+                        }
+                    });
+                    
+                    if (!isValid) {
+                        e.preventDefault();
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+
+                    // Show loading state
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    const originalText = submitButton.textContent;
+                    submitButton.textContent = 'Sending...';
+                    submitButton.disabled = true;
+
+                    // Note: Formspree will handle the actual submission
+                    // The success message will be handled by the _next redirect or page reload
+                });
+            }
+
+            // Check for success parameter in URL (from Formspree redirect)
+            if (window.location.hash === '#quote-success') {
+                document.getElementById('quote-success').style.display = 'block';
+                document.querySelector('.quote-form').style.display = 'none';
+            }
+
+            // Track form interactions with Google Analytics (if GA is set up)
+            if (typeof gtag !== 'undefined') {
+                // Track quote form views
+                if (document.getElementById('quote').classList.contains('active')) {
+                    gtag('event', 'page_view', {
+                        page_title: 'Quote Request Page',
+                        page_location: window.location.href
+                    });
+                }
+
+                // Track phone clicks
+                document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+                    link.addEventListener('click', function() {
+                        gtag('event', 'phone_call', {
+                            event_category: 'Contact',
+                            event_label: 'Phone Click'
+                        });
+                    });
+                });
+
+                // Track email clicks
+                document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+                    link.addEventListener('click', function() {
+                        gtag('event', 'email_click', {
+                            event_category: 'Contact',
+                            event_label: 'Email Click'
+                        });
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
