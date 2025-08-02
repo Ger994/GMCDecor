@@ -282,6 +282,18 @@
             color: var(--dark-bg);
         }
 
+        .btn-outline {
+            background: var(--white);
+            color: var(--dark-bg);
+            border: 2px solid var(--dark-bg);
+        }
+
+        .btn-outline:hover {
+            background: var(--dark-bg);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
         /* Services Preview */
         .services-preview {
             padding: 80px 0;
@@ -1016,7 +1028,7 @@
                         <p>We provide free estimates and consultations for all projects.</p>
                         <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
                             <a href="tel:07306277101" class="btn btn-primary">📞 Call Now</a>
-                            <a href="#" class="btn btn-secondary" onclick="showPage('quote')">Get Quote</a>
+                            <a href="#" class="btn btn-outline" onclick="showPage('quote')">Get Quote</a>
                         </div>
                     </div>
                 </div>
@@ -1130,7 +1142,7 @@
                     <p>Tell us about your project and we'll provide a detailed, no-obligation quote within 24 hours</p>
                 </div>
 
-                <form class="quote-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form class="quote-form" action="https://formspree.io/f/mnnzbvwq" method="POST">
                     <!-- Hidden field for Formspree -->
                     <input type="hidden" name="_subject" value="New Quote Request from GMC Decor Website">
                     <input type="hidden" name="_next" value="#quote-success">
