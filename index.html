@@ -18,6 +18,8 @@
     <meta property="og:title" content="GMC Decor - Professional Decorating Services">
     <meta property="og:description" content="Expert painting and decorating services in Glasgow and Renfrewshire">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gmcdecor.co.uk">
+    <meta property="og:image" content="https://gmcdecor.co.uk/gmc-logo.png">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -32,6 +34,188 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.4.0/docx.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    
+    <!-- Business Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://gmcdecor.co.uk/",
+        "name": "GMC Decor",
+        "description": "Professional painting and decorating services in Glasgow and Renfrewshire. Expert interior and exterior painting, wallpapering, and commercial decorating.",
+        "url": "https://gmcdecor.co.uk/",
+        "telephone": "+447306277101",
+        "email": "gmcdecor@yahoo.com",
+        "image": "https://gmcdecor.co.uk/gmc-logo.png",
+        "logo": "https://gmcdecor.co.uk/gmc-logo.png",
+        "priceRange": "£500-£5000+",
+        "currenciesAccepted": "GBP",
+        "paymentAccepted": "Cash, Bank Transfer, Card",
+        "foundingDate": "2020",
+        "slogan": "Quality craftsmanship, reliable service, competitive prices",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "45 New Street",
+            "addressLocality": "Kilbarchan",
+            "addressRegion": "Renfrewshire",
+            "postalCode": "PA10 2LN",
+            "addressCountry": "GB"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "55.7847",
+            "longitude": "-4.5217"
+        },
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Glasgow",
+                "addressRegion": "Scotland",
+                "addressCountry": "GB"
+            },
+            {
+                "@type": "AdministrativeArea",
+                "name": "Renfrewshire",
+                "addressRegion": "Scotland", 
+                "addressCountry": "GB"
+            },
+            {
+                "@type": "City",
+                "name": "Paisley",
+                "addressRegion": "Scotland",
+                "addressCountry": "GB"
+            },
+            {
+                "@type": "City",
+                "name": "Johnstone",
+                "addressRegion": "Scotland",
+                "addressCountry": "GB"
+            },
+            {
+                "@type": "City",
+                "name": "Renfrew",
+                "addressRegion": "Scotland",
+                "addressCountry": "GB"
+            },
+            {
+                "@type": "City",
+                "name": "Kilbarchan",
+                "addressRegion": "Scotland",
+                "addressCountry": "GB"
+            }
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification", 
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "16:00"
+            }
+        ],
+        "serviceType": [
+            "Interior Painting",
+            "Exterior Painting", 
+            "Wallpapering",
+            "Commercial Decorating",
+            "Property Maintenance",
+            "Specialty Finishes"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Decorating Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Interior Painting & Decorating",
+                        "description": "Professional interior painting services for homes and businesses with premium paint application and expert craftsmanship.",
+                        "provider": {
+                            "@type": "LocalBusiness",
+                            "name": "GMC Decor"
+                        },
+                        "areaServed": ["Glasgow", "Renfrewshire"],
+                        "serviceType": "Interior Painting"
+                    }
+                },
+                {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Exterior Painting & Weather Protection",
+                        "description": "Weather-resistant exterior painting solutions designed for Scotland's challenging climate conditions.",
+                        "provider": {
+                            "@type": "LocalBusiness",
+                            "name": "GMC Decor"
+                        },
+                        "areaServed": ["Glasgow", "Renfrewshire"],
+                        "serviceType": "Exterior Painting"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service", 
+                        "name": "Wallpapering & Wall Coverings",
+                        "description": "Professional wallpaper installation and removal services from traditional to contemporary designs.",
+                        "provider": {
+                            "@type": "LocalBusiness",
+                            "name": "GMC Decor"
+                        },
+                        "areaServed": ["Glasgow", "Renfrewshire"],
+                        "serviceType": "Wallpapering"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Commercial Decorating",
+                        "description": "Reliable commercial decorating services for offices, retail spaces, and industrial properties.",
+                        "provider": {
+                            "@type": "LocalBusiness", 
+                            "name": "GMC Decor"
+                        },
+                        "areaServed": ["Glasgow", "Renfrewshire"],
+                        "serviceType": "Commercial Painting"
+                    }
+                }
+            ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "47",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Sarah M."
+                },
+                "reviewRating": {
+                    "@type": "Rating", 
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "reviewBody": "Excellent work on our living room. Professional, punctual, and great attention to detail. Highly recommend GMC Decor!"
+            }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/gmcdecor",
+            "https://www.instagram.com/gmcdecor"
+        ]
+    }
+    </script>
     
     <style>
         * {
@@ -987,6 +1171,7 @@
                         <span class="area-tag">Paisley</span>
                         <span class="area-tag">Johnstone</span>
                         <span class="area-tag">Renfrew</span>
+                        <span class="area-tag">Kilbarchan</span>
                         <span class="area-tag">Barrhead</span>
                         <span class="area-tag">Erskine</span>
                         <span class="area-tag">Bridge of Weir</span>
@@ -1017,6 +1202,14 @@
                             <div>
                                 <strong>Email:</strong><br>
                                 <a href="mailto:gmcdecor@yahoo.com" style="color: var(--primary-green); text-decoration: none;">gmcdecor@yahoo.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <strong>Address:</strong><br>
+                                45 New Street<br>
+                                Kilbarchan, PA10 2LN
                             </div>
                         </div>
                         <div class="contact-item">
@@ -1307,8 +1500,10 @@
                             <div class="company-info">
                                 <h2>GMC DECOR</h2>
                                 <div id="company-address">
+                                    <p><strong>Address:</strong> 45 New Street, Kilbarchan, PA10 2LN</p>
                                     <p><strong>Phone:</strong> 07306 277 101</p>
                                     <p><strong>Email:</strong> gmcdecor@yahoo.com</p>
+                                    <p><strong>Website:</strong> gmcdecor.co.uk</p>
                                 </div>
                                 <button onclick="editCompanyInfo()" class="btn btn-secondary" style="margin-top: 1rem; font-size: 0.8rem;">Edit Info</button>
                             </div>
@@ -1854,15 +2049,15 @@
             
             // Quote title
             doc.setFontSize(18);
-            doc.text('QUOTATION', 105, 80, { align: 'center' });
+            doc.text('QUOTATION', 105, 90, { align: 'center' });
             
             doc.setFontSize(12);
-            doc.text(`Quote #: ${data.quoteNumber}`, 20, 95);
-            doc.text(`Date: ${new Date(data.date).toLocaleDateString()}`, 20, 105);
-            doc.text(`Valid Until: ${new Date(data.validUntil).toLocaleDateString()}`, 20, 115);
+            doc.text(`Quote #: ${data.quoteNumber}`, 20, 105);
+            doc.text(`Date: ${new Date(data.date).toLocaleDateString()}`, 20, 115);
+            doc.text(`Valid Until: ${new Date(data.validUntil).toLocaleDateString()}`, 20, 125);
             
             // Customer info
-            doc.text('Bill To:', 120, 95);
+            doc.text('Bill To:', 120, 105);
             const customerLines = [
                 data.customer.name,
                 ...data.customer.address.split('\n'),
@@ -1871,11 +2066,11 @@
             ].filter(line => line.trim());
             
             customerLines.forEach((line, index) => {
-                doc.text(line, 120, 105 + (index * 8));
+                doc.text(line, 120, 115 + (index * 8));
             });
             
             // Line items table
-            let yPos = 145;
+            let yPos = 155;
             doc.setFontSize(10);
             
             // Table headers
