@@ -11,7 +11,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     
     <!-- Open Graph tags -->
@@ -1189,6 +1189,43 @@
                 </ul>
             </div>
         </nav>
+<script>
+(function () {
+  function _showPage(pageId) {
+    try {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      var target = document.getElementById(pageId);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo(0, 0);
+      } else {
+        console.error('Page not found:', pageId);
+      }
+    } catch (e) {
+      console.error('Error showing page:', e);
+    }
+    return false;
+  }
+
+  function _scrollToSection(sectionId) {
+    try {
+      _showPage('home');
+      setTimeout(function () {
+        var el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        else console.error('Section not found:', sectionId);
+      }, 80);
+    } catch (e) {
+      console.error('Error scrolling to section:', e);
+    }
+    return false;
+  }
+
+  window.showPage = _showPage;
+  window.scrollToSection = _scrollToSection;
+})();
+</script>
+
     </header>
 
     <!-- Home Page -->
