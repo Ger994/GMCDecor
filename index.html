@@ -657,6 +657,90 @@
             justify-content: center;
         }
 
+        /* Thank You Page Styles */
+        .thank-you {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, #8bc934 100%);
+            color: var(--dark-bg);
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .thank-you-content {
+            width: 100%;
+        }
+
+        .thank-you h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .thank-you-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .thank-you-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-dark);
+        }
+
+        .timeline-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .timeline-step {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-green);
+            color: var(--dark-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .emergency-contact {
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary-green);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
         /* Footer */
         footer {
             background: var(--dark-bg);
@@ -673,6 +757,11 @@
 
         .page.active {
             display: block;
+        }
+
+        /* Thank you page override - full height */
+        .page#thank-you.active {
+            padding: 0;
         }
 
         /* Services Page */
@@ -1011,7 +1100,7 @@
                 display: flex;
             }
 
-            .hero h1 {
+            .hero h1, .thank-you h1 {
                 font-size: 2rem;
             }
 
@@ -1043,6 +1132,16 @@
             .line-item input,
             .line-item select {
                 margin-bottom: 0.5rem;
+            }
+
+            .timeline-steps {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .thank-you-card {
+                margin: 0 1rem;
+                padding: 2rem;
             }
         }
 
@@ -1341,11 +1440,7 @@
                     <p>Tell us about your project and we'll provide a detailed, no-obligation quote within 24 hours</p>
                 </div>
 
-                <form class="quote-form" action="https://formspree.io/f/mnnzbvwq" method="POST">
-                    <!-- Hidden field for Formspree -->
-                    <input type="hidden" name="_subject" value="New Quote Request from GMC Decor Website">
-                    <input type="hidden" name="_next" value="#quote-success">
-                    <input type="hidden" name="_captcha" value="false">
+                <form class="quote-form" onsubmit="handleQuoteSubmission(event)">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" required>
@@ -1437,16 +1532,8 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Quote Request</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" id="submit-btn">Send Quote Request</button>
                 </form>
-
-                <!-- Success Message (hidden by default) -->
-                <div id="quote-success" style="display: none; text-align: center; padding: 2rem; background: var(--primary-green); color: var(--dark-bg); border-radius: 10px; margin-top: 2rem;">
-                    <h3>Thank You! 🎉</h3>
-                    <p>Your quote request has been submitted successfully. We'll contact you within 2 hours to discuss your project.</p>
-                    <p><strong>Need immediate assistance?</strong><br>
-                    Call us now: <a href="tel:07306277101" style="color: var(--dark-bg); font-weight: bold;">07306 277 101</a></p>
-                </div>
 
                 <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: var(--light-bg); border-radius: 10px;">
                     <h3 style="color: var(--dark-bg); margin-bottom: 1rem;">What Happens Next?</h3>
@@ -1467,6 +1554,89 @@
                             <strong>4. Project Start</strong><br>
                             <small>Professional execution of your decorating project</small>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Thank You Page -->
+    <div id="thank-you" class="page">
+        <section class="thank-you">
+            <div class="container">
+                <div class="thank-you-content">
+                    <div class="thank-you-card">
+                        <div class="thank-you-icon">🎉</div>
+                        <h1>Thank You!</h1>
+                        <h2 style="color: var(--primary-green); margin-bottom: 2rem;">Your Quote Request Has Been Received</h2>
+                        
+                        <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                            We've successfully received your quote request and our team will review it immediately. 
+                            You can expect to hear from us within the next <strong>2 hours</strong> during business hours.
+                        </p>
+
+                        <div class="emergency-contact">
+                            <h3 style="margin-bottom: 1rem; color: var(--dark-bg);">Need Immediate Assistance?</h3>
+                            <p style="margin-bottom: 1rem;">For urgent decorating needs or if you have any questions, don't hesitate to call us directly:</p>
+                            <a href="tel:07306277101" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 30px;">
+                                📞 07306 277 101
+                            </a>
+                        </div>
+
+                        <h3 style="margin-top: 3rem; margin-bottom: 2rem; color: var(--dark-bg);">What Happens Next?</h3>
+                        <div class="timeline-steps">
+                            <div class="timeline-step">
+                                <div class="step-number">1</div>
+                                <h4>Quote Review</h4>
+                                <p>Our team reviews your requirements and project details within 2 hours</p>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">2</div>
+                                <h4>Initial Contact</h4>
+                                <p>We'll call or email you to discuss your project and arrange a site visit</p>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">3</div>
+                                <h4>Free Consultation</h4>
+                                <p>Professional assessment of your property and detailed project discussion</p>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-number">4</div>
+                                <h4>Detailed Quote</h4>
+                                <p>Comprehensive written quote delivered within 24 hours of site visit</p>
+                            </div>
+                        </div>
+
+                        <div style="background: var(--light-bg); padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+                            <h4 style="color: var(--dark-bg); margin-bottom: 1rem;">Why Choose GMC Decor?</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: left;">
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="color: var(--primary-green); font-weight: bold;">✓</span>
+                                    <span>Fully Insured</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="color: var(--primary-green); font-weight: bold;">✓</span>
+                                    <span>Local Family Business</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="color: var(--primary-green); font-weight: bold;">✓</span>
+                                    <span>500+ Projects Completed</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="color: var(--primary-green); font-weight: bold;">✓</span>
+                                    <span>Free Quotes & Consultations</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                            <a href="#" onclick="showPage('home')" class="btn btn-outline">← Back to Home</a>
+                            <a href="#" onclick="showPage('services')" class="btn btn-secondary">View Our Services</a>
+                        </div>
+
+                        <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-light);">
+                            This page is not indexed by search engines for your privacy.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1623,6 +1793,14 @@
             
             // Scroll to top
             window.scrollTo(0, 0);
+
+            // Track page views with Google Analytics if available
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    page_title: pageId.charAt(0).toUpperCase() + pageId.slice(1),
+                    page_location: window.location.href + '#' + pageId
+                });
+            }
         }
 
         function scrollToSection(sectionId) {
@@ -1664,76 +1842,111 @@
             }
         });
 
-        // Smooth scrolling for internal links
-        document.addEventListener('DOMContentLoaded', function() {
-            // Handle form submission
-            const form = document.querySelector('.quote-form');
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    const requiredFields = form.querySelectorAll('[required]');
-                    let isValid = true;
-                    
-                    requiredFields.forEach(field => {
-                        if (!field.value.trim()) {
-                            field.style.borderColor = '#ff6b6b';
-                            isValid = false;
-                        } else {
-                            field.style.borderColor = '#e0e0e0';
-                        }
-                    });
-                    
-                    if (!isValid) {
-                        e.preventDefault();
-                        alert('Please fill in all required fields.');
-                        return;
-                    }
-
-                    // Show loading state
-                    const submitButton = form.querySelector('button[type="submit"]');
-                    const originalText = submitButton.textContent;
-                    submitButton.textContent = 'Sending...';
-                    submitButton.disabled = true;
-
-                    // Note: Formspree will handle the actual submission
-                    // The success message will be handled by the _next redirect or page reload
-                });
-            }
-
-            // Check for success parameter in URL (from Formspree redirect)
-            if (window.location.hash === '#quote-success') {
-                document.getElementById('quote-success').style.display = 'block';
-                document.querySelector('.quote-form').style.display = 'none';
-            }
-
-            // Track form interactions with Google Analytics (if GA is set up)
-            if (typeof gtag !== 'undefined') {
-                // Track quote form views
-                if (document.getElementById('quote').classList.contains('active')) {
-                    gtag('event', 'page_view', {
-                        page_title: 'Quote Request Page',
-                        page_location: window.location.href
-                    });
+        // Enhanced form submission handling
+        function handleQuoteSubmission(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+            
+            // Validate required fields
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#ff6b6b';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '#e0e0e0';
                 }
+            });
+            
+            if (!isValid) {
+                alert('Please fill in all required fields.');
+                return;
+            }
 
-                // Track phone clicks
-                document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-                    link.addEventListener('click', function() {
+            // Show loading state
+            const submitBtn = document.getElementById('submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Collect form data
+            const formData = new FormData(form);
+            
+            // Submit to Formspree
+            fetch('https://formspree.io/f/mnnzbvwq', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show thank you page
+                    showPage('thank-you');
+                    
+                    // Track successful form submission
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'form_submit', {
+                            event_category: 'Quote Request',
+                            event_label: 'Successful Submission'
+                        });
+                    }
+                    
+                    // Reset form for next use
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your quote request. Please try again or call us directly at 07306 277 101.');
+            })
+            .finally(() => {
+                // Reset button state
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        }
+
+        // Document ready functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track phone clicks
+            document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (typeof gtag !== 'undefined') {
                         gtag('event', 'phone_call', {
                             event_category: 'Contact',
                             event_label: 'Phone Click'
                         });
-                    });
+                    }
                 });
+            });
 
-                // Track email clicks
-                document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-                    link.addEventListener('click', function() {
+            // Track email clicks
+            document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (typeof gtag !== 'undefined') {
                         gtag('event', 'email_click', {
                             event_category: 'Contact',
                             event_label: 'Email Click'
                         });
-                    });
+                    }
                 });
+            });
+
+            // Handle direct access to thank you page (prevent indexing)
+            if (window.location.hash === '#thank-you' || window.location.search.includes('thank-you')) {
+                // Add noindex meta tag
+                const noIndexMeta = document.createElement('meta');
+                noIndexMeta.name = 'robots';
+                noIndexMeta.content = 'noindex, nofollow';
+                document.head.appendChild(noIndexMeta);
+                
+                showPage('thank-you');
             }
         });
 
@@ -2130,6 +2343,6 @@
             
             doc.save(`GMC_Decor_Quote_${data.quoteNumber}.pdf`);
         }
-    </script>
-</body>
-</html>
+
+        // Prevent search engine indexing of thank you page when accessed directly
+        
