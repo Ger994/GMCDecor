@@ -1166,11 +1166,11 @@
                 <span class="company-name">GMC Decor</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#" onclick="showPage('home')">Home</a></li>
-                <li><a href="#" onclick="showPage('services')">Services</a></li>
-                <li><a href="#" onclick="showPage('quote')">Get Quote</a></li>
-                <li><a href="#" onclick="scrollToSection('contact')">Contact</a></li>
-                <li><a href="#" onclick="showPage('admin')" style="opacity: 0.7;">Admin</a></li>
+                <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+                <li><a href="#" onclick="showPage('services'); return false;">Services</a></li>
+                <li><a href="#" onclick="showPage('quote'); return false;">Get Quote</a></li>
+                <li><a href="#" onclick="scrollToSection('contact'); return false;">Contact</a></li>
+                <li><a href="#" onclick="showPage('admin'); return false;" style="opacity: 0.7;">Admin</a></li>
             </ul>
             <div class="mobile-menu" onclick="toggleMobileMenu()">
                 <span></span>
@@ -1181,11 +1181,11 @@
             <!-- Mobile Navigation Dropdown -->
             <div class="mobile-nav-dropdown" id="mobile-nav-dropdown">
                 <ul>
-                    <li><a href="#" onclick="showPage('home'); closeMobileMenu();">Home</a></li>
-                    <li><a href="#" onclick="showPage('services'); closeMobileMenu();">Services</a></li>
-                    <li><a href="#" onclick="showPage('quote'); closeMobileMenu();">Get Quote</a></li>
-                    <li><a href="#" onclick="scrollToSection('contact'); closeMobileMenu();">Contact</a></li>
-                    <li><a href="#" onclick="showPage('admin'); closeMobileMenu();">Admin</a></li>
+                    <li><a href="#" onclick="showPage('home'); closeMobileMenu(); return false;">Home</a></li>
+                    <li><a href="#" onclick="showPage('services'); closeMobileMenu(); return false;">Services</a></li>
+                    <li><a href="#" onclick="showPage('quote'); closeMobileMenu(); return false;">Get Quote</a></li>
+                    <li><a href="#" onclick="scrollToSection('contact'); closeMobileMenu(); return false;">Contact</a></li>
+                    <li><a href="#" onclick="showPage('admin'); closeMobileMenu(); return false;">Admin</a></li>
                 </ul>
             </div>
         </nav>
@@ -1198,8 +1198,8 @@
                 <h1>Professional <span class="hero-highlight">Decorating</span> Services</h1>
                 <p>Transform your space with GMC Decor's expert painting and decorating services throughout Glasgow and Renfrewshire. Quality craftsmanship, reliable service, competitive prices.</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary" onclick="showPage('quote')">Get Free Quote</a>
-                    <a href="#" class="btn btn-secondary" onclick="showPage('services')">Our Services</a>
+                    <a href="#" class="btn btn-primary" onclick="showPage('quote'); return false;">Get Free Quote</a>
+                    <a href="#" class="btn btn-secondary" onclick="showPage('services'); return false;">Our Services</a>
                 </div>
             </div>
         </section>
@@ -1326,7 +1326,7 @@
                         <p>We provide free estimates and consultations for all projects.</p>
                         <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
                             <a href="tel:07306277101" class="btn btn-primary">📞 Call Now</a>
-                            <a href="#" class="btn btn-outline" onclick="showPage('quote')">Get Quote</a>
+                            <a href="#" class="btn btn-outline" onclick="showPage('quote'); return false;">Get Quote</a>
                         </div>
                     </div>
                 </div>
@@ -1425,7 +1425,7 @@
 
                 <div style="text-align: center; margin-top: 3rem;">
                     <p style="font-size: 1.1rem; margin-bottom: 2rem;">Not sure which service you need? We're happy to discuss your requirements and provide expert advice.</p>
-                    <a href="#" class="btn btn-primary" onclick="showPage('quote')">Get Your Free Quote Today</a>
+                    <a href="#" class="btn btn-primary" onclick="showPage('quote'); return false;">Get Your Free Quote Today</a>
                 </div>
             </div>
         </section>
@@ -1630,8 +1630,8 @@
                         </div>
 
                         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                            <a href="#" onclick="showPage('home')" class="btn btn-outline">← Back to Home</a>
-                            <a href="#" onclick="showPage('services')" class="btn btn-secondary">View Our Services</a>
+                            <a href="#" onclick="showPage('home'); return false;" class="btn btn-outline">← Back to Home</a>
+                            <a href="#" onclick="showPage('services'); return false;" class="btn btn-secondary">View Our Services</a>
                         </div>
 
                         <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-light);">
@@ -1784,35 +1784,53 @@
 
     <script>
         function showPage(pageId) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
+            try {
+                // Hide all pages
+                const pages = document.querySelectorAll('.page');
+                pages.forEach(page => page.classList.remove('active'));
+                
+                // Show selected page
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
 
-            // Track page views with Google Analytics if available
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'page_view', {
-                    page_title: pageId.charAt(0).toUpperCase() + pageId.slice(1),
-                    page_location: window.location.href + '#' + pageId
-                });
+                    // Track page views with Google Analytics if available
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'page_view', {
+                            page_title: pageId.charAt(0).toUpperCase() + pageId.slice(1),
+                            page_location: window.location.href + '#' + pageId
+                        });
+                    }
+                } else {
+                    console.error('Page not found:', pageId);
+                }
+            } catch (error) {
+                console.error('Error showing page:', error);
             }
         }
 
         function scrollToSection(sectionId) {
-            // Make sure we're on home page first
-            showPage('home');
-            
-            // Wait a moment then scroll to section
-            setTimeout(() => {
-                document.getElementById(sectionId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }, 100);
+            try {
+                // Make sure we're on home page first
+                showPage('home');
+                
+                // Wait a moment then scroll to section
+                setTimeout(() => {
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        section.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        console.error('Section not found:', sectionId);
+                    }
+                }, 100);
+            } catch (error) {
+                console.error('Error scrolling to section:', error);
+            }
         }
 
         // Mobile menu functionality
@@ -1914,6 +1932,8 @@
 
         // Document ready functionality
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('GMC Decor website loaded successfully');
+            
             // Track phone clicks
             document.querySelectorAll('a[href^="tel:"]').forEach(link => {
                 link.addEventListener('click', function() {
