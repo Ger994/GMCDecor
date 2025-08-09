@@ -1784,11 +1784,6 @@
 
     <script>
         // Define all functions in the global scope
-        // Expose page navigation functions on the global window object so they
-        // can be called from inline onclick handlers. Without attaching them
-        // to window, some browsers may treat these functions as module‑scoped
-        // and they will not be available when the page first loads, leading
-        // to "showPage is not defined" errors.
         function showPage(pageId) {
             try {
                 // Hide all pages
@@ -1818,12 +1813,6 @@
             }
         }
 
-        // Assign to window to ensure the function is also a property on the
-        // global object. This allows inline event handlers to call showPage
-        // directly while still avoiding module scoping issues.
-        window.showPage = showPage;
-
-        // Similarly expose scrollToSection globally for inline handlers
         function scrollToSection(sectionId) {
             try {
                 // Make sure we're on home page first
@@ -1844,9 +1833,6 @@
                 console.error('Error scrolling to section:', error);
             }
         }
-
-        // Assign to window to ensure scrollToSection is available globally
-        window.scrollToSection = scrollToSection;
 
         // Mobile menu functionality
         function toggleMobileMenu() {
