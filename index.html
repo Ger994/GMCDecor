@@ -1166,11 +1166,11 @@
                 <span class="company-name">GMC Decor</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#" data-page="home">Home</a></li>
-                <li><a href="#" data-page="services">Services</a></li>
-                <li><a href="#" data-page="quote">Get Quote</a></li>
-                <li><a href="#" data-section="contact">Contact</a></li>
-                <li><a href="#" data-page="admin" style="opacity: 0.7;">Admin</a></li>
+                <li><a href="javascript:void(0)" onclick="showPage('home')">Home</a></li>
+                <li><a href="javascript:void(0)" onclick="showPage('services')">Services</a></li>
+                <li><a href="javascript:void(0)" onclick="showPage('quote')">Get Quote</a></li>
+                <li><a href="javascript:void(0)" onclick="scrollToSection('contact')">Contact</a></li>
+                <li><a href="javascript:void(0)" onclick="showPage('admin')" style="opacity: 0.7;">Admin</a></li>
             </ul>
             <div class="mobile-menu" onclick="toggleMobileMenu()" id="mobile-menu-btn">
                 <span></span>
@@ -1181,11 +1181,11 @@
             <!-- Mobile Navigation Dropdown -->
             <div class="mobile-nav-dropdown" id="mobile-nav-dropdown">
                 <ul>
-                    <li><a href="#" data-page="home" class="mobile-nav-link">Home</a></li>
-                    <li><a href="#" data-page="services" class="mobile-nav-link">Services</a></li>
-                    <li><a href="#" data-page="quote" class="mobile-nav-link">Get Quote</a></li>
-                    <li><a href="#" data-section="contact" class="mobile-nav-link">Contact</a></li>
-                    <li><a href="#" data-page="admin" class="mobile-nav-link">Admin</a></li>
+                    <li><a href="javascript:void(0)" onclick="showPage('home'); closeMobileMenu();">Home</a></li>
+                    <li><a href="javascript:void(0)" onclick="showPage('services'); closeMobileMenu();">Services</a></li>
+                    <li><a href="javascript:void(0)" onclick="showPage('quote'); closeMobileMenu();">Get Quote</a></li>
+                    <li><a href="javascript:void(0)" onclick="scrollToSection('contact'); closeMobileMenu();">Contact</a></li>
+                    <li><a href="javascript:void(0)" onclick="showPage('admin'); closeMobileMenu();">Admin</a></li>
                 </ul>
             </div>
         </nav>
@@ -1198,8 +1198,8 @@
                 <h1>Professional <span class="hero-highlight">Decorating</span> Services</h1>
                 <p>Transform your space with GMC Decor's expert painting and decorating services throughout Glasgow and Renfrewshire. Quality craftsmanship, reliable service, competitive prices.</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary nav-link" data-page="quote">Get Free Quote</a>
-                    <a href="#" class="btn btn-secondary nav-link" data-page="services">Our Services</a>
+                    <a href="javascript:void(0)" class="btn btn-primary" onclick="showPage('quote')">Get Free Quote</a>
+                    <a href="javascript:void(0)" class="btn btn-secondary" onclick="showPage('services')">Our Services</a>
                 </div>
             </div>
         </section>
@@ -1326,7 +1326,7 @@
                         <p>We provide free estimates and consultations for all projects.</p>
                         <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
                             <a href="tel:07306277101" class="btn btn-primary">📞 Call Now</a>
-                            <a href="#" class="btn btn-outline nav-link" data-page="quote">Get Quote</a>
+                            <a href="javascript:void(0)" class="btn btn-outline" onclick="showPage('quote')">Get Quote</a>
                         </div>
                     </div>
                 </div>
@@ -1425,7 +1425,7 @@
 
                 <div style="text-align: center; margin-top: 3rem;">
                     <p style="font-size: 1.1rem; margin-bottom: 2rem;">Not sure which service you need? We're happy to discuss your requirements and provide expert advice.</p>
-                    <a href="#" class="btn btn-primary nav-link" data-page="quote">Get Your Free Quote Today</a>
+                    <a href="javascript:void(0)" class="btn btn-primary" onclick="showPage('quote')">Get Your Free Quote Today</a>
                 </div>
             </div>
         </section>
@@ -1630,8 +1630,8 @@
                         </div>
 
                         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                            <a href="#" class="btn btn-outline nav-link" data-page="home">← Back to Home</a>
-                            <a href="#" class="btn btn-secondary nav-link" data-page="services">View Our Services</a>
+                            <a href="javascript:void(0)" class="btn btn-outline" onclick="showPage('home')">← Back to Home</a>
+                            <a href="javascript:void(0)" class="btn btn-secondary" onclick="showPage('services')">View Our Services</a>
                         </div>
 
                         <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-light);">
