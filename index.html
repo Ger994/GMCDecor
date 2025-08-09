@@ -11,7 +11,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     
     <!-- Open Graph tags -->
@@ -1189,6 +1189,43 @@
                 </ul>
             </div>
         </nav>
+<script>
+(function () {
+  function _showPage(pageId) {
+    try {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      var target = document.getElementById(pageId);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo(0, 0);
+      } else {
+        console.error('Page not found:', pageId);
+      }
+    } catch (e) {
+      console.error('Error showing page:', e);
+    }
+    return false;
+  }
+
+  function _scrollToSection(sectionId) {
+    try {
+      _showPage('home');
+      setTimeout(function () {
+        var el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        else console.error('Section not found:', sectionId);
+      }, 80);
+    } catch (e) {
+      console.error('Error scrolling to section:', e);
+    }
+    return false;
+  }
+
+  window.showPage = _showPage;
+  window.scrollToSection = _scrollToSection;
+})();
+</script>
+
     </header>
 
     <!-- Home Page -->
@@ -1783,20 +1820,6 @@
     </footer>
 
     <script>
-    // SPA back/forward support
-    window.addEventListener('popstate', function (e) {
-        var path = (window.location && window.location.pathname) || '/';
-        if (/\/thank-you\/?$/.test(path)) {
-            showPage('thank-you');
-        } else {
-            // Default to home on other paths
-            showPage('home');
-        }
-    });
-    </script>
-    
-
-    <script>
         // Define all functions in the global scope
         function showPage(pageId) {
             try {
@@ -1919,7 +1942,8 @@
                 if (response.ok) {
                     // Show thank you page
                     showPage('thank-you');
-                    try { history.pushState({page:'thank-you'}, '', '/thank-you'); } catch(e) {}// Track successful form submission
+                    
+                    // Track successful form submission
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'form_submit', {
                             event_category: 'Quote Request',
@@ -1947,16 +1971,6 @@
         // Document ready functionality
         document.addEventListener('DOMContentLoaded', function() {
             console.log('GMC Decor website loaded successfully');
-            // Handle direct /thank-you path
-            if (window.location && window.location.pathname && /\/thank-you\/?$/.test(window.location.pathname)) {
-                const noIndexMeta = document.createElement('meta');
-                noIndexMeta.name = 'robots';
-                noIndexMeta.content = 'noindex, nofollow';
-                document.head.appendChild(noIndexMeta);
-                showPage('thank-you');
-                return;
-            }
-
             
             // Initialize navigation
             initializeNavigation();
