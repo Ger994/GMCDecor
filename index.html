@@ -1166,11 +1166,11 @@
                 <span class="company-name">GMC Decor</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
-                <li><a href="#" onclick="showPage('services'); return false;">Services</a></li>
-                <li><a href="#" onclick="showPage('quote'); return false;">Get Quote</a></li>
-                <li><a href="#" onclick="scrollToSection('contact'); return false;">Contact</a></li>
-                <li><a href="#" onclick="showPage('admin'); return false;" style="opacity: 0.7;">Admin</a></li>
+                <li><a href="#" data-page="home">Home</a></li>
+                <li><a href="#" data-page="services">Services</a></li>
+                <li><a href="#" data-page="quote">Get Quote</a></li>
+                <li><a href="#" data-section="contact">Contact</a></li>
+                <li><a href="#" data-page="admin" style="opacity: 0.7;">Admin</a></li>
             </ul>
             <div class="mobile-menu" onclick="toggleMobileMenu()">
                 <span></span>
@@ -1181,11 +1181,11 @@
             <!-- Mobile Navigation Dropdown -->
             <div class="mobile-nav-dropdown" id="mobile-nav-dropdown">
                 <ul>
-                    <li><a href="#" onclick="showPage('home'); closeMobileMenu(); return false;">Home</a></li>
-                    <li><a href="#" onclick="showPage('services'); closeMobileMenu(); return false;">Services</a></li>
-                    <li><a href="#" onclick="showPage('quote'); closeMobileMenu(); return false;">Get Quote</a></li>
-                    <li><a href="#" onclick="scrollToSection('contact'); closeMobileMenu(); return false;">Contact</a></li>
-                    <li><a href="#" onclick="showPage('admin'); closeMobileMenu(); return false;">Admin</a></li>
+                    <li><a href="#" data-page="home" class="mobile-nav-link">Home</a></li>
+                    <li><a href="#" data-page="services" class="mobile-nav-link">Services</a></li>
+                    <li><a href="#" data-page="quote" class="mobile-nav-link">Get Quote</a></li>
+                    <li><a href="#" data-section="contact" class="mobile-nav-link">Contact</a></li>
+                    <li><a href="#" data-page="admin" class="mobile-nav-link">Admin</a></li>
                 </ul>
             </div>
         </nav>
@@ -1198,8 +1198,8 @@
                 <h1>Professional <span class="hero-highlight">Decorating</span> Services</h1>
                 <p>Transform your space with GMC Decor's expert painting and decorating services throughout Glasgow and Renfrewshire. Quality craftsmanship, reliable service, competitive prices.</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary" onclick="showPage('quote'); return false;">Get Free Quote</a>
-                    <a href="#" class="btn btn-secondary" onclick="showPage('services'); return false;">Our Services</a>
+                    <a href="#" class="btn btn-primary nav-link" data-page="quote">Get Free Quote</a>
+                    <a href="#" class="btn btn-secondary nav-link" data-page="services">Our Services</a>
                 </div>
             </div>
         </section>
@@ -1326,7 +1326,7 @@
                         <p>We provide free estimates and consultations for all projects.</p>
                         <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
                             <a href="tel:07306277101" class="btn btn-primary">📞 Call Now</a>
-                            <a href="#" class="btn btn-outline" onclick="showPage('quote'); return false;">Get Quote</a>
+                            <a href="#" class="btn btn-outline nav-link" data-page="quote">Get Quote</a>
                         </div>
                     </div>
                 </div>
@@ -1425,7 +1425,7 @@
 
                 <div style="text-align: center; margin-top: 3rem;">
                     <p style="font-size: 1.1rem; margin-bottom: 2rem;">Not sure which service you need? We're happy to discuss your requirements and provide expert advice.</p>
-                    <a href="#" class="btn btn-primary" onclick="showPage('quote'); return false;">Get Your Free Quote Today</a>
+                    <a href="#" class="btn btn-primary nav-link" data-page="quote">Get Your Free Quote Today</a>
                 </div>
             </div>
         </section>
@@ -1630,8 +1630,8 @@
                         </div>
 
                         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                            <a href="#" onclick="showPage('home'); return false;" class="btn btn-outline">← Back to Home</a>
-                            <a href="#" onclick="showPage('services'); return false;" class="btn btn-secondary">View Our Services</a>
+                            <a href="#" class="btn btn-outline nav-link" data-page="home">← Back to Home</a>
+                            <a href="#" class="btn btn-secondary nav-link" data-page="services">View Our Services</a>
                         </div>
 
                         <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-light);">
@@ -1934,6 +1934,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('GMC Decor website loaded successfully');
             
+            // Initialize navigation
+            initializeNavigation();
+            
             // Track phone clicks
             document.querySelectorAll('a[href^="tel:"]').forEach(link => {
                 link.addEventListener('click', function() {
@@ -1969,6 +1972,37 @@
                 showPage('thank-you');
             }
         });
+
+        // Initialize navigation event listeners
+        function initializeNavigation() {
+            // Handle all navigation links with data-page attribute
+            document.querySelectorAll('[data-page]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    showPage(pageId);
+                    
+                    // Close mobile menu if it's a mobile nav link
+                    if (this.classList.contains('mobile-nav-link')) {
+                        closeMobileMenu();
+                    }
+                });
+            });
+
+            // Handle all navigation links with data-section attribute (for scrolling)
+            document.querySelectorAll('[data-section]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('data-section');
+                    scrollToSection(sectionId);
+                    
+                    // Close mobile menu if it's a mobile nav link
+                    if (this.classList.contains('mobile-nav-link')) {
+                        closeMobileMenu();
+                    }
+                });
+            });
+        }
 
         // Admin Section Functions
         let isAuthenticated = false;
